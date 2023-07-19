@@ -5,15 +5,24 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        <title>Document</title>
+        <title>Survey Form</title>
     </head>
     <body>
-        <form class="main-form" action="/action_page.php">
+        <form class="main-form" id="survey-form" action="/action_page.php">
             <div class="main">
+                <div class="title">
+                    <h1 id="title">Survey Form</h1>
+                    <p id="description">
+                        Thank you for taking the time to help us improve the
+                        platform.
+                    </p>
+                </div>
+
                 <div class="name">
-                    <div>Name</div>
+                    <label for="" id="name-label"> Name </label>
                     <div>
                         <input
+                            id="name"
                             type="text"
                             placeholder="Enter your name here"
                             required
@@ -23,24 +32,31 @@
                 </div>
 
                 <div>
-                    <div>Email</div>
+                    <label for="" id="email-label"> Email </label>
                     <div>
                         <input
                             type="email"
                             placeholder="Enter your email here"
                             required
+                            id="email"
                             class="box"
                         />
                     </div>
                 </div>
 
                 <div>
-                    <div>Age <span class="inside-text">(optional)</span></div>
+                    <label for="" id="number-label">
+                        Age <span class="inside-text">(optional)</span>
+                    </label>
+
                     <div>
                         <input
                             type="number"
                             placeholder="Enter your age here"
+                            id="number"
                             class="box"
+                            min="10"
+                            max="99"
                         />
                     </div>
                 </div>
@@ -48,7 +64,7 @@
                 <div>
                     <div>Which option best describes your current role?</div>
                     <div>
-                        <select name="role" id="#" class="box" required>
+                        <select name="role" id="dropdown" class="box" required>
                             <option value="none" selected disable hidden>
                                 Select current role
                             </option>
@@ -65,18 +81,30 @@
                     <div>Would you recommend freeCodeCamp to a friend?</div>
                     <div class="recommendation">
                         <span>
-                            <input type="radio" name="recommend" />
+                            <input
+                                type="radio"
+                                value="definitely"
+                                name="recommend"
+                            />
                             <label for="Definitely"> Definitely</label>
                         </span>
 
                         <span>
-                            <input type="radio" name="recommend" />
-                            <label for="Definitely"> Maybe</label>
+                            <input
+                                type="radio"
+                                value="maybe"
+                                name="recommend"
+                            />
+                            <label for="Maybe"> Maybe</label>
                         </span>
 
                         <span>
-                            <input type="radio" name="recommend" />
-                            <label for="Definitely"> Not sure </label>
+                            <input
+                                type="radio"
+                                value="not-sure"
+                                name="recommend"
+                            />
+                            <label for="not-sure"> Not sure </label>
                         </span>
                     </div>
                 </div>
@@ -106,48 +134,48 @@
 
                     <div class="improvement">
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="front-end" />
                             <label> Front-end Projects</label>
                         </span>
 
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="back-end" />
                             <label> Back-end Projects</label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="data" />
                             <label>Data Visualization </label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="challenges" />
                             <label> Challenges</label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="open-source" />
                             <label>Open Source Community </label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="help-room" />
                             <label>Gitter help rooms </label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="video" />
                             <label> Videos</label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="meetups" />
                             <label> City Meetups</label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="wiki" />
                             <label>Wiki </label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="forum" />
                             <label>Forum </label>
                         </span>
                         <span>
-                            <input type="checkbox" />
+                            <input type="checkbox" value="add-course" />
                             <label> Additional Courses </label>
                         </span>
                     </div>
@@ -165,7 +193,12 @@
                 </div>
 
                 <div>
-                    <input type="submit" value="Submit" class="sumbit-btn" />
+                    <input
+                        type="submit"
+                        id="submit"
+                        value="Submit"
+                        class="sumbit-btn"
+                    />
                 </div>
             </div>
         </form>
